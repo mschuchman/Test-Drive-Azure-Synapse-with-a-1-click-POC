@@ -993,7 +993,7 @@
 						"spark.dynamicAllocation.enabled": "false",
 						"spark.dynamicAllocation.minExecutors": "2",
 						"spark.dynamicAllocation.maxExecutors": "2",
-						"spark.autotune.trackingId": "abf63057-ff63-4742-afee-659691caca65"
+						"spark.autotune.trackingId": "c6167882-d159-4ec8-8b39-b94a030b80dd"
 					}
 				},
 				"metadata": {
@@ -1054,7 +1054,7 @@
 							"from pyspark.ml.evaluation import BinaryClassificationEvaluator"
 						],
 						"outputs": [],
-						"execution_count": 1
+						"execution_count": 12
 					},
 					{
 						"cell_type": "markdown",
@@ -1080,7 +1080,7 @@
 							"nyc_tlc_df = nyc_tlc.to_spark_dataframe()"
 						],
 						"outputs": [],
-						"execution_count": 2
+						"execution_count": 13
 					},
 					{
 						"cell_type": "code",
@@ -1089,7 +1089,7 @@
 							"sampled_taxi_df = nyc_tlc_df.sample(True, 0.001, seed=1234)"
 						],
 						"outputs": [],
-						"execution_count": 3
+						"execution_count": 14
 					},
 					{
 						"cell_type": "markdown",
@@ -1131,7 +1131,7 @@
 							"plt.show()"
 						],
 						"outputs": [],
-						"execution_count": 4
+						"execution_count": 15
 					},
 					{
 						"cell_type": "markdown",
@@ -1164,7 +1164,7 @@
 							"                                )"
 						],
 						"outputs": [],
-						"execution_count": 5
+						"execution_count": 16
 					},
 					{
 						"cell_type": "markdown",
@@ -1191,7 +1191,7 @@
 							"                                       .filter((taxi_df.tripTimeSecs >= 30) & (taxi_df.tripTimeSecs <= 7200))"
 						],
 						"outputs": [],
-						"execution_count": 6
+						"execution_count": 17
 					},
 					{
 						"cell_type": "markdown",
@@ -1219,7 +1219,7 @@
 							"encoded_final_df = Pipeline(stages=[sI1, en1, sI2, en2]).fit(taxi_featurised_df).transform(taxi_featurised_df)"
 						],
 						"outputs": [],
-						"execution_count": 7
+						"execution_count": 18
 					},
 					{
 						"cell_type": "markdown",
@@ -1241,7 +1241,7 @@
 							"train_data_df, test_data_df = encoded_final_df.randomSplit([trainingFraction, testingFraction], seed=seed)"
 						],
 						"outputs": [],
-						"execution_count": 8
+						"execution_count": 19
 					},
 					{
 						"cell_type": "markdown",
@@ -1276,7 +1276,7 @@
 							"print(\"Area under ROC = %s\" % metrics.areaUnderROC)"
 						],
 						"outputs": [],
-						"execution_count": 9
+						"execution_count": 20
 					},
 					{
 						"cell_type": "markdown",
@@ -1301,7 +1301,7 @@
 							"plt.show()"
 						],
 						"outputs": [],
-						"execution_count": null
+						"execution_count": 21
 					}
 				]
 			},
